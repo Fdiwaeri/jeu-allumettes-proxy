@@ -1,0 +1,9 @@
+# Fichiers compilés Java
+*.class
+
+# Dossiers de compilation
+bin/
+
+# Fichiers de test générés
+*.computed
+*.diff

@@ -1,0 +1,68 @@
+--------------------------------------------------------------------------------
+Nom       : ELLAIK
+Prénom    : Fadwa
+--------------------------------------------------------------------------------
+
+Consigne : Dans ce fichier, les « ... » indiquent les endroits à compléter.
+Il s'agit de remplacer les « ... » par votre texte.  Merci de laisser une
+ligne blanche avant.  Le texte déjà écrit doit être conservé !
+
+
+=====[ Temps passé ]============================================================
+
+Ces informations de temps sont demandées à titre indicatif et ne sont pas
+prises en compte dans la notation du projet.
+Il faut remplacer les ... par des nombres.
+
+
+* Temps passé : 4 heures 0 minutes
+
+
+=====[ Questions ]==============================================================
+
+--------------------------------------------------------------------------------
+Pourquoi l'exception OperationInterditeException ne peut pas être définie
+comme vérifiée par le compilateur ?
+--------------------------------------------------------------------------------
+
+Parce qu'elle est levée par Proxy.retirer(). Cette méthode surcharge Jeu.retirer().
+
+En Java, une méthode surchargée ne peut pas ajouter une nouvelle exception vérifiée (checked) que la méthode de l'interface (Jeu.retirer) ne déclare pas.
+
+En la définissant comme non-vérifiée (héritant de RuntimeException) , le Proxy peut la lever sans violer le contrat de l'interface Jeu.
+
+
+--------------------------------------------------------------------------------
+Expliquer ce qu'il faut faire pour ajouter un nouveau niveau de jeu, par
+exemple la stratégie lente (C13).  Pour plus de précision, on numérotera
+les étapes à faire.
+--------------------------------------------------------------------------------
+
+1. Créer la classe StrategieLente.java en implémentant l'interface Strategie et sa méthode choisir().
+
+2. Dans Jouer.java, localiser la méthode donnerJoueur(String arg) et ajouter un nouveau case au switch pour reconnaître la stratégie : case "lente" -> new Joueur(nom, new StrategieLente());
+
+3. Dans Jouer.java, localiser la méthode afficherUsage() et ajouter l'option lente aux stratégies possibles.
+
+--------------------------------------------------------------------------------
+Expliquer ce qui permet, dans votre conception, de changer dynamiquement
+(en cours d'exécution du programme) la stratégie d'un joueur (C14).
+--------------------------------------------------------------------------------
+
+C'est le patron de conception Stratégie.
+
+Le Joueur utilise la composition : il ne contient pas la logique, il possède un attribut (une instance de Strategie) auquel il délègue l'appel.
+
+Il suffirait d'ajouter une méthode "setter" (setStrategie()) dans Joueur pour remplacer cet attribut à tout moment, ce qui changerait instantanément son comportement.
+
+
+=====[ Explications ]===========================================================
+
+--------------------------------------------------------------------------------
+Donner ici les explications supplémentaires utiles à la compréhension du
+travail rendu.
+--------------------------------------------------------------------------------
+
+...
+
+--------------------------------------------------------------------------------

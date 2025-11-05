@@ -27,8 +27,7 @@ Ce projet est une implémentation avancée en **Java** du Jeu des 13 Allumettes.
 ## Qualité et Tests / Quality and Testing
 
 * **Tests Unitaires JUnit:** L'ensemble de la stratégie `Rapide` a été couvert par des tests unitaires complets en utilisant le framework **JUnit**.
-* **Robustesse IHM:** Le programme a été développé pour respecter strictement les exemples d'affichage et d'interaction (IHM) du sujet pour garantir la réussite des tests en **boîte noire**.
-
+* **Tests d'Intégration (Boîte Noire):** La robustesse de l'IHM et la conformité du programme ont été validées à l'aide du script `testeur.sh` fourni. Ce script lance une série de scénarios de jeu (fichiers `.run`) et compare la sortie du programme aux résultats attendus (`.expected`) pour garantir une correspondance parfaite.
 
 ## Exécution du Projet / Running the Project
 
